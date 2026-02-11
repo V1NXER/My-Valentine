@@ -31,7 +31,7 @@ const phases = [
   },
   {
     text: "Okay fine... click YES or I will cry forever. 🌊",
-    img: "valentines/assets/tuCu6BT-.jpg", // Phase 5: Drama
+    img: "assets/tuCu6BT-.jpg", // Phase 5: Drama
     btnText: "Fine, Yes!",
   },
 ];
@@ -63,3 +63,4 @@ yesBtn.addEventListener("click", () => {
   // Show the surprise div
   surprise.classList.remove("hidden");
 });
+
