@@ -1,0 +1,163 @@
+/* Import romantic fonts */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  /* PUT YOUR BACKGROUND IMAGE HERE */
+  background: url("assets/619724558_865302033068285_3280385415049623320_n.jpg")
+    no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+  z-index: 0;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  width: 90%;
+  max-width: 450px;
+  padding: 2rem;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: pop 1s ease;
+}
+
+/* CAT IMAGE STYLE */
+.cat-img {
+  width: 100%;
+  max-height: 200px; /* Limits height so it fits on phone screens */
+  object-fit: contain; /* Keeps the whole cat visible */
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive;
+  color: #ff4f81;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* Final Letter Scrollable if too long on small phones */
+.letter-text {
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  padding-right: 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#yesBtn {
+  background: #ff4f81;
+  color: white;
+  font-weight: bold;
+}
+
+#noBtn {
+  background: #eee;
+  color: #333;
+}
+
+#noBtn:active {
+  transform: scale(0.9); /* Click effect */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Floating Hearts Animation */
+.hearts::before,
+.hearts::after {
+  content: "❤️ 💕 💖 💗 💓";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  animation: float 12s linear infinite;
+  font-size: 2rem;
+  opacity: 0.4;
+  z-index: 0;
+}
+.hearts::after {
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(110vh);
+  }
+  to {
+    transform: translateY(-10vh);
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mobile Tweaks */
+@media (max-width: 400px) {
+  .card {
+    padding: 1.5rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .cat-img {
+    max-height: 150px;
+  }
+}
